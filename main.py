@@ -102,7 +102,7 @@ while playing:
         screen.blit(info_text, (280, 600))
         pygame.display.update()
             
-    # 기본 모드
+    # 게임 실행
     result, result_time, result_hp, clear = game.game()
     #종료 화면
     total_result_text = ''

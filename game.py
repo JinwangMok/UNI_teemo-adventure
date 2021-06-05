@@ -79,7 +79,7 @@ def game():
             self.to_x = 0
             self.to_y= 0
             self.speed = speed#이동속도  
-         #캐릭터 생성   
+    #캐릭터 생성   
     teemo = champion(64, 'images/teemo.png', 100, 0)
     enermy = champion(128, 'images/enermy.png', SCREEN_WIDTH, 0, 50)
     minion1 = minion(48, 48, 'images/minion_1.png', SCREEN_WIDTH, 0, 150)
@@ -126,7 +126,7 @@ def game():
     mushroom_pos_y = SCREEN_HEIGHT - (SCREEN_FLOOR + mushroom_y)
     mushroom.set_alpha(0)
     clear = False
-    #4. 메인 이벤트###############################################################################
+    #4. 게임 루프###############################################################################
     playing = True
     while playing:
         
@@ -270,6 +270,7 @@ def game():
                             sturn_time = 0
                             hide_time = 0
                         elif hp_status >= 4:
+                            hp_status += 1
                             playing = False
                      #미니언2 충돌
                     if teemo.rect.colliderect(minion2.rect):
@@ -282,6 +283,7 @@ def game():
                             sturn_time = 0
                             hide_time = 0
                         elif hp_status >= 4:
+                            hp_status += 1
                             playing = False
                      #대포 미니언 충돌
                     if teemo.rect.colliderect(cannon_minion.rect):
@@ -294,6 +296,7 @@ def game():
                             sturn_time = 0
                             hide_time = 0
                         elif hp_status >= 4:
+                            hp_status += 1
                             playing = False
                      #적챔피언 충돌
                     if teemo.rect.colliderect(enermy.rect):
@@ -306,6 +309,7 @@ def game():
                             sturn_time = 0
                             hide_time = 0
                         elif hp_status >= 4:
+                            hp_status += 1
                             playing = False
                 # 충돌 후 처리
                 if collide is True:
